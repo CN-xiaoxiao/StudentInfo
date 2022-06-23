@@ -1,11 +1,13 @@
 package com.xiaoxiao.entity;
 
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @author xiaoxiao
  */
 @Data
+@Accessors(chain = true)
 public class Punishment {
     private int id;
     private int studentId;

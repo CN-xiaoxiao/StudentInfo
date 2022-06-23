@@ -89,11 +89,12 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button6"
 						"text": "奖励管理"
-						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "RewardMouseClicked", true ) )
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "rewardMouseClicked", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button7"
 						"text": "处分管理"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "punishmentMouseClicked", true ) )
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {

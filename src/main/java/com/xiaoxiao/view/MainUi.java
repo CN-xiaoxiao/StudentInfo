@@ -56,9 +56,14 @@ public class MainUi extends JFrame {
         System.exit(0);
     }
 
-    private void RewardMouseClicked(MouseEvent e) {
+    private void rewardMouseClicked(MouseEvent e) {
         // TODO add your code here
         new ManageReward().start();
+    }
+
+    private void punishmentMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new PunishmentManager().start();
     }
 
     private void initComponents() {
@@ -212,13 +217,19 @@ public class MainUi extends JFrame {
                 button6.addMouseListener(new MouseAdapter() {
                     @Override
                     public void mouseClicked(MouseEvent e) {
-                        RewardMouseClicked(e);
+                        rewardMouseClicked(e);
                     }
                 });
                 menu5.add(button6);
 
                 //---- button7 ----
                 button7.setText("\u5904\u5206\u7ba1\u7406");
+                button7.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        punishmentMouseClicked(e);
+                    }
+                });
                 menu5.add(button7);
             }
             menuBar1.add(menu5);

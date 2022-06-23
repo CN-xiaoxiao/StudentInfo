@@ -54,4 +54,15 @@ public class mapperTest {
         System.out.println(mapper.insertReward(new Reward().setStudentId(2005010420).setLevels(3).setRecTime(formatter.format(date)).setDescription("校三等奖学金")));
     }
 
+    @Test
+    public void testPunishmentMapper() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        PunishmentMapper mapper = sqlSession.getMapper(PunishmentMapper.class);
+
+//        System.out.println(mapper.getDescriptionByCode(1));
+//        System.out.println(mapper.getCodeByDescription("严重警告"));
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println(mapper.insertPunishment(new Punishment().setStudentId(2005010420).setLevels(1).setDescription("严重警告").setRecTime(formatter.format(date)).setEnable("T")));
+    }
 }

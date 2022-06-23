@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoxiao.mapper.PunishmentMapper">
+
+    <resultMap id="Punishment" type="com.xiaoxiao.entity.Punishment">
+        <id property="id" column="id"/>
+        <result property="studentId" column="studentid"/>
+        <result property="levels" column="levels"/>
+        <result property="recTime" column="rec_time"/>
+        <result property="description" column="description"/>
+    </resultMap>
+
+    <insert id="insertPunishment">
+        insert into `student_info`.`punishment` values(null, #{punishment.studentId}, #{punishment.levels},
+                                                       #{punishment.recTime}, #{punishment.enable}, #{punishment.description});
+    </insert>
+
+    <select id="getDescriptionByCode" resultType="java.lang.String">
+        select description from punish_levels where code = #{code};
+    </select>
+
+    <select id="getCodeByDescription" resultType="java.lang.Integer">
+        select code from punish_levels where description = #{description};
+    </select>
+
+
+</mapper>
