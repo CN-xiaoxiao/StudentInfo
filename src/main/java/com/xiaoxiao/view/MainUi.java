@@ -46,10 +46,26 @@ public class MainUi extends JFrame {
         new DepartmentList().start();
     }
 
+    private void upDateStudentMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new UpDateStudent().start();
+    }
+
+    private void exitSystemMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        System.exit(0);
+    }
+
+    private void RewardMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new ManageReward().start();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
+        button11 = new JButton();
         menu2 = new JMenu();
         button2 = new JButton();
         button3 = new JButton();
@@ -57,6 +73,7 @@ public class MainUi extends JFrame {
         button4 = new JButton();
         button5 = new JButton();
         button8 = new JButton();
+        button10 = new JButton();
         menu4 = new JMenu();
         button1 = new JButton();
         button9 = new JButton();
@@ -81,6 +98,16 @@ public class MainUi extends JFrame {
             //======== menu1 ========
             {
                 menu1.setText("\u7cfb\u7edf\u7ba1\u7406");
+
+                //---- button11 ----
+                button11.setText("\u9000\u51fa\u7cfb\u7edf");
+                button11.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        exitSystemMouseClicked(e);
+                    }
+                });
+                menu1.add(button11);
             }
             menuBar1.add(menu1);
 
@@ -136,7 +163,17 @@ public class MainUi extends JFrame {
 
                 //---- button8 ----
                 button8.setText("\u4fe1\u606f\u7ba1\u7406");
+                button8.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        upDateStudentMouseClicked(e);
+                    }
+                });
                 menu3.add(button8);
+
+                //---- button10 ----
+                button10.setText("\u5b66\u751f\u5217\u8868");
+                menu3.add(button10);
             }
             menuBar1.add(menu3);
 
@@ -172,6 +209,12 @@ public class MainUi extends JFrame {
 
                 //---- button6 ----
                 button6.setText("\u5956\u52b1\u7ba1\u7406");
+                button6.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        RewardMouseClicked(e);
+                    }
+                });
                 menu5.add(button6);
 
                 //---- button7 ----
@@ -182,7 +225,7 @@ public class MainUi extends JFrame {
 
             //======== menu6 ========
             {
-                menu6.setText("\u5173\u4e8e");
+                menu6.setText("   \u5173\u4e8e   ");
             }
             menuBar1.add(menu6);
         }
@@ -212,6 +255,7 @@ public class MainUi extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     private JMenuBar menuBar1;
     private JMenu menu1;
+    private JButton button11;
     private JMenu menu2;
     private JButton button2;
     private JButton button3;
@@ -219,6 +263,7 @@ public class MainUi extends JFrame {
     private JButton button4;
     private JButton button5;
     private JButton button8;
+    private JButton button10;
     private JMenu menu4;
     private JButton button1;
     private JButton button9;

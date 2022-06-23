@@ -7,4 +7,6 @@ public interface StudentMapper {
     Student selectStudentById(Integer id);
 
     int insertStudent(@Param("student") Student student);
+
+    int updateStudent(@Param("student") Student student);
 }

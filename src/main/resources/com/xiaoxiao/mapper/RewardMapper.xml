@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoxiao.mapper.RewardMapper">
+
+    <resultMap id="Reward" type="com.xiaoxiao.entity.Reward">
+        <id property="id" column="id"/>
+        <result property="studentId" column="studentid"/>
+        <result property="levels" column="levels"/>
+        <result property="recTime" column="rec_time"/>
+        <result property="description" column="description"/>
+    </resultMap>
+
+    <insert id="insertReward">
+        insert into `student_info`.`reward` values (null, #{reward.studentId}, #{reward.levels}, #{reward.recTime}, #{reward.description});
+    </insert>
+
+    <select id="getDescriptionById" resultType="java.lang.String">
+        select description from reward_levels where code = #{id};
+    </select>
+    <select id="getCodeByDescription" resultType="java.lang.Integer">
+        select code from reward_levels where description = #{description};
+    </select>
+
+
+</mapper>

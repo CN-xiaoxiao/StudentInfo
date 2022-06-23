@@ -26,6 +26,11 @@ new FormModel {
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu1"
 					"text": "系统管理"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button11"
+						"text": "退出系统"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "exitSystemMouseClicked", true ) )
+					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu2"
@@ -57,6 +62,11 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button8"
 						"text": "信息管理"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "upDateStudentMouseClicked", true ) )
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "button10"
+						"text": "学生列表"
 					} )
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
@@ -79,6 +89,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button6"
 						"text": "奖励管理"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "RewardMouseClicked", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button7"
@@ -87,7 +98,7 @@ new FormModel {
 				} )
 				add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 					name: "menu6"
-					"text": "关于"
+					"text": "   关于   "
 				} )
 			}
 		}, new FormLayoutConstraints( null ) {

@@ -1,11 +1,5 @@
-import com.xiaoxiao.entity.Change;
-import com.xiaoxiao.entity.Department;
-import com.xiaoxiao.entity.Student;
-import com.xiaoxiao.entity.User;
-import com.xiaoxiao.mapper.ChangeMapper;
-import com.xiaoxiao.mapper.DepartmentMapper;
-import com.xiaoxiao.mapper.StudentMapper;
-import com.xiaoxiao.mapper.UserMapper;
+import com.xiaoxiao.entity.*;
+import com.xiaoxiao.mapper.*;
 import com.xiaoxiao.utils.SqlSessionUtils;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
@@ -27,8 +21,8 @@ public class mapperTest {
     public void testStudentMapper() {
         SqlSession sqlSession = SqlSessionUtils.getSqlSession();
         StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
-        System.out.println(mapper.insertStudent(new Student().setStudentId(2005010421).setName("李四").setSex("M")
-                .setBirthday("2001-01-23").setStudentClass(4).setDepartment(5).setNativePlace("江西")));
+        System.out.println(mapper.updateStudent(new Student().setStudentId(2005010421).setName("李四")
+                .setBirthday("2001-01-23").setNativePlace("黑龙江")));
     }
 
     @Test
@@ -48,4 +42,16 @@ public class mapperTest {
 
         mapper.insertDepartment(new Department().setId(1).setName("教育学院"));
     }
+
+    @Test
+    public void testRewardMapper() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        RewardMapper mapper = sqlSession.getMapper(RewardMapper.class);
+//        System.out.println(mapper.getDescriptionById(1));
+//        System.out.println(mapper.getCodeByDescription("校二等奖学金"));
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        System.out.println(mapper.insertReward(new Reward().setStudentId(2005010420).setLevels(3).setRecTime(formatter.format(date)).setDescription("校三等奖学金")));
+    }
+
 }

@@ -20,7 +20,13 @@
                                     #{student.nativePlace})
     </insert>
 
-    <select id="selectStudentById" resultType="Student">
+    <update id="updateStudent">
+        update student set name = #{student.name} ,birthday = #{student.birthday} ,native_place = #{student.nativePlace}
+            where studentId = #{student.studentId};
+
+    </update>
+
+    <select id="selectStudentById" resultMap="Student">
         select * from student where studentid = #{studentId}
     </select>
 

@@ -71,4 +71,18 @@ public class StudentHandler {
 
         return SUCCESS;
     }
+
+    public Student getStudent(int id) {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+
+        return mapper.selectStudentById(id);
+    }
+
+    public int upDate(Student student) {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        StudentMapper mapper = sqlSession.getMapper(StudentMapper.class);
+
+        return mapper.updateStudent(student);
+    }
 }
