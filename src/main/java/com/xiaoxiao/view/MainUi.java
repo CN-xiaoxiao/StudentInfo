@@ -31,6 +31,11 @@ public class MainUi extends JFrame {
         new AddStudent().start();
     }
 
+    private void rollUpdateMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new UpdateStudentRoll().start();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -110,6 +115,12 @@ public class MainUi extends JFrame {
 
                 //---- button5 ----
                 button5.setText("\u5b66\u7c4d\u4fee\u6539");
+                button5.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        rollUpdateMouseClicked(e);
+                    }
+                });
                 menu3.add(button5);
 
                 //---- button8 ----

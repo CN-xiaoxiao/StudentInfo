@@ -52,6 +52,7 @@ new FormModel {
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button5"
 						"text": "学籍修改"
+						addEvent( new FormEvent( "java.awt.event.MouseListener", "mouseClicked", "rollUpdateMouseClicked", true ) )
 					} )
 					add( new FormComponent( "javax.swing.JButton" ) {
 						name: "button8"
