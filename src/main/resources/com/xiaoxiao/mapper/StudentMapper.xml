@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xiaoxiao.mapper.StudentMapper">
+
+    <resultMap id="Student" type="com.xiaoxiao.entity.Student">
+        <id property="studentId" column="studentid"/>
+        <result property="name" column="name"/>
+        <result property="sex" column="sex"/>
+        <result property="studentClass" column="class"/>
+        <result property="department" column="department"/>
+        <result property="birthday" column="birthday"/>
+        <result property="nativePlace" column="native_place"/>
+    </resultMap>
+
+    <insert id="insertStudent">
+        insert into student VALUES (#{student.studentId}, #{student.name}, #{student.sex},
+                                    #{student.studentClass}, #{student.department}, #{student.birthday},
+                                    #{student.nativePlace})
+    </insert>
+
+    <select id="selectStudentById" resultType="Student">
+        select * from student where studentid = #{studentId}
+    </select>
+
+
+</mapper>
