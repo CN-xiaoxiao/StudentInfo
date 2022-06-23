@@ -1,7 +1,9 @@
 import com.xiaoxiao.entity.Change;
+import com.xiaoxiao.entity.Department;
 import com.xiaoxiao.entity.Student;
 import com.xiaoxiao.entity.User;
 import com.xiaoxiao.mapper.ChangeMapper;
+import com.xiaoxiao.mapper.DepartmentMapper;
 import com.xiaoxiao.mapper.StudentMapper;
 import com.xiaoxiao.mapper.UserMapper;
 import com.xiaoxiao.utils.SqlSessionUtils;
@@ -37,5 +39,13 @@ public class mapperTest {
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         mapper.insertChange(new Change().setStudentId(2005010420).setChangeCode(4).setRecTime(formatter.format(date)).setDescription("毕业").setId(1));
 //        mapper.getAllChanges();
+    }
+
+    @Test
+    public void testDepartmentMapper() {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DepartmentMapper mapper = sqlSession.getMapper(DepartmentMapper.class);
+
+        mapper.insertDepartment(new Department().setId(1).setName("教育学院"));
     }
 }

@@ -9,6 +9,9 @@
         <result property="name" column="name"/>
 
     </resultMap>
+    <insert id="insertDepartment">
+        insert into department values(#{department.id}, #{department.name});
+    </insert>
 
     <select id="getAllDepartment" resultType="com.xiaoxiao.entity.Department">
         select * from department

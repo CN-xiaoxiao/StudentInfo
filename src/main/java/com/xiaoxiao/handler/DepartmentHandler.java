@@ -26,4 +26,10 @@ public class DepartmentHandler {
         return mapper.getDepartmentByName(name);
     }
 
+    public int insertDepartment(int id, String name) {
+        SqlSession sqlSession = SqlSessionUtils.getSqlSession();
+        DepartmentMapper mapper = sqlSession.getMapper(DepartmentMapper.class);
+
+        return mapper.insertDepartment(new Department().setId(id).setName(name));
+    }
 }

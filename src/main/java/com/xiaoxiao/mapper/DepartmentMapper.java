@@ -10,4 +10,6 @@ public interface DepartmentMapper {
     List<Department> getAllDepartment();
 
     Department getDepartmentByName(@Param("name") String name);
+
+    int insertDepartment(@Param("department") Department department);
 }

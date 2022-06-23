@@ -36,6 +36,16 @@ public class MainUi extends JFrame {
         new UpdateStudentRoll().start();
     }
 
+    private void departmentMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new AddDepartment().start();
+    }
+
+    private void departmentListMouseClicked(MouseEvent e) {
+        // TODO add your code here
+        new DepartmentList().start();
+    }
+
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents
         menuBar1 = new JMenuBar();
@@ -49,6 +59,7 @@ public class MainUi extends JFrame {
         button8 = new JButton();
         menu4 = new JMenu();
         button1 = new JButton();
+        button9 = new JButton();
         menu5 = new JMenu();
         button6 = new JButton();
         button7 = new JButton();
@@ -135,7 +146,23 @@ public class MainUi extends JFrame {
 
                 //---- button1 ----
                 button1.setText("\u6dfb\u52a0\u5b66\u9662");
+                button1.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        departmentMouseClicked(e);
+                    }
+                });
                 menu4.add(button1);
+
+                //---- button9 ----
+                button9.setText("\u5b66\u9662\u5217\u8868");
+                button9.addMouseListener(new MouseAdapter() {
+                    @Override
+                    public void mouseClicked(MouseEvent e) {
+                        departmentListMouseClicked(e);
+                    }
+                });
+                menu4.add(button9);
             }
             menuBar1.add(menu4);
 
@@ -194,6 +221,7 @@ public class MainUi extends JFrame {
     private JButton button8;
     private JMenu menu4;
     private JButton button1;
+    private JButton button9;
     private JMenu menu5;
     private JButton button6;
     private JButton button7;
